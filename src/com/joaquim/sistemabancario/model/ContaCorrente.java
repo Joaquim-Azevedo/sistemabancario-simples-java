@@ -1,6 +1,7 @@
 package com.joaquim.sistemabancario.model;
 
 public class ContaCorrente extends Conta{
+    protected String tipoConta = "Conta Corrente";
 
     public ContaCorrente(Usuario usuario){
         super(usuario);
@@ -20,7 +21,7 @@ public class ContaCorrente extends Conta{
             return false;
         }
         this.setSaldo(this.saldo -= valor);
-        System.out.println("Saque na conta corrente liberado com sucesso no valor de: " + valor);
+        transacoes.add(new Transacao(this.usuario, "Saque", valor));
         return true;
     }
 
@@ -35,9 +36,9 @@ public class ContaCorrente extends Conta{
         System.out.println("Erro. Conta corrente não gera juros.");
     }
 
-    public double getLimite() {
-        return limite;
+    @Override
+    public String getTipoConta(){
+        return tipoConta;
     }
-
 }
 

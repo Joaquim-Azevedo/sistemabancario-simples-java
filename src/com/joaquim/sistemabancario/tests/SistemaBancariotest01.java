@@ -13,22 +13,31 @@ public class SistemaBancariotest01 {
         Usuario marcio = new Usuario("Marcio Azevedo", "456.456.456-45");
 
 
-        Conta conta1 = meuBanco.criarConta(joaquim, "cc");
-        conta1.depositar(500);
-        conta1.sacar(300);
-        conta1.sacar(600);
-        conta1.definirLimite(50);
+        Conta joaquimCC = meuBanco.criarConta(joaquim, "cc");
+        joaquimCC.depositar(500);
+        joaquimCC.sacar(300);
+        joaquimCC.sacar(600);
+        joaquimCC.depositar(5000);
+        joaquimCC.sacar(20);
+        joaquimCC.sacar(20);
+        joaquimCC.definirLimite(700);
+        joaquimCC.sacar(700);
 
-        Conta conta2 = meuBanco.criarConta(maria, "cp");
-        conta2.depositar(300);
-        conta2.renderJuros();
-        conta2.sacar(250);
+        Conta mariaCP = meuBanco.criarConta(maria, "cp");
+        mariaCP.depositar(300);
+        mariaCP.renderJuros();
+        mariaCP.sacar(250);
 
 
-        Conta conta3 = meuBanco.criarConta(marcio, "cc");
-        conta3.depositar(1000);
-        conta3.sacar(300);
+        Conta marcioCC = meuBanco.criarConta(marcio, "cc");
+        marcioCC.depositar(1000);
+        marcioCC.sacar(300);
+        marcioCC.pagarAnualidade();
+
+        joaquimCC.imprimirExtrato();
+        mariaCP.imprimirExtrato();
 
         meuBanco.listarContas();
+
     }
 }

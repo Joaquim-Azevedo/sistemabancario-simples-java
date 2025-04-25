@@ -1,33 +1,34 @@
 package com.joaquim.sistemabancario.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Conta {
-    protected int numConta;
-    protected double saldo;
     protected Usuario usuario;
+    protected double saldo;
     protected double limite;
+    protected List<Transacao> transacoes;
+    private Extrato extrato;
 
     public Conta(Usuario usuario) {
         this.usuario = usuario;
         this.saldo = 0.0;
+        this.transacoes = new ArrayList<>();
     }
 
-    public boolean sacar(double valor){
-        if(valor < saldo){
-            System.out.println("Não é possível sacar um valor maior que o saldo.");
-            return false;
-        }
-        this.setSaldo(this.saldo -= valor);
-        System.out.println("Saque liberado com sucesso no valor de: " + valor);
-        return true;
+    public void imprimirExtrato(){
+        this.extrato = new Extrato(this.transacoes);
+        this.extrato.imprimirExtrato();
     }
 
     public boolean depositar(double valor){
         if(valor <= 0){return false;}
         this.setSaldo(this.saldo += valor);
-        System.out.println("Depósito liberado na conta de " + this.usuario.getNome() + " no valor de: R$" + valor);
+        transacoes.add(new Transacao(this.usuario, "Depósito", valor));
         return true;
     }
+
+    public abstract boolean sacar(double valor);
 
     public abstract void pagarAnualidade();
 
@@ -35,20 +36,10 @@ public abstract class Conta {
 
     public abstract void definirLimite(double limite);
 
+    public abstract String getTipoConta();
+
     public double getLimite() {
         return limite;
-    }
-
-    public void setLimite(double limite) {
-        this.limite = limite;
-    }
-
-    public int getNumConta() {
-        return numConta;
-    }
-
-    protected void setNumConta(int numConta) {
-        this.numConta = numConta;
     }
 
     public double getSaldo() {
@@ -63,4 +54,7 @@ public abstract class Conta {
         return usuario;
     }
 
+    public List<Transacao> getTransacoes() {
+        return transacoes;
+    }
 }

@@ -37,21 +37,19 @@ public class Banco {
 
     public void listarContas(){
         for (Conta c : this.getContas()) {
-            System.out.println("Número da conta: " + c.getNumConta() +
-                    "\nTitular: " + c.getUsuario().getNome() +
-                    "\nSaldo: R$" + c.getSaldo());
+            System.out.println("----- Conta -----");
+            System.out.println("Tipo de conta: " + c.getTipoConta());
+            System.out.println("Titular: " + c.getUsuario().getNome());
+            System.out.println("Saldo: R$" + c.getSaldo());
         }
     }
 
-    public List<Conta> getContas() {
+    private List<Conta> getContas() {
         return contas;
-    }
-
-    public void setContas(List<Conta> contas) {
-        this.contas = contas;
     }
 
     public String getNome() {
         return nome;
     }
+
 }

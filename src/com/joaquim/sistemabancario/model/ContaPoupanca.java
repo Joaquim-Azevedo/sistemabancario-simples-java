@@ -2,6 +2,7 @@ package com.joaquim.sistemabancario.model;
 
 public class ContaPoupanca extends Conta{
     private double taxaJuros;
+    private String tipoConta = "Conta Poupança";
 
     public ContaPoupanca(Usuario usuario){
         super(usuario);
@@ -22,7 +23,7 @@ public class ContaPoupanca extends Conta{
             return false;
         }
         this.setSaldo(this.saldo -= valor);
-        System.out.println("Saque liberado na conta de " + this.getUsuario().getNome() + " no valor de: R$" + valor);
+        transacoes.add(new Transacao(this.usuario, "Saque", valor));
         return true;
     }
 
@@ -37,11 +38,9 @@ public class ContaPoupanca extends Conta{
         System.out.println("Novo limite definido com sucesso: R$" + this.limite);
     }
 
-    public double getTaxaJuros() {
-        return taxaJuros;
+    @Override
+    public String getTipoConta(){
+        return tipoConta;
     }
 
-    public void setTaxaJuros(double taxaJuros) {
-        this.taxaJuros = taxaJuros;
-    }
 }
