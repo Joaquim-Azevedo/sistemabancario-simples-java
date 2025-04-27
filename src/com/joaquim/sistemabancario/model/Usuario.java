@@ -14,9 +14,15 @@ public class Usuario {
         return nome;
     }
 
-
     public String getCpf() {
         return cpf;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 }

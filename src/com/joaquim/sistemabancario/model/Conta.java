@@ -5,6 +5,8 @@ import java.util.List;
 
 public abstract class Conta {
     protected Usuario usuario;
+    private static int proximoNumConta = 1000;
+    private int numConta;
     protected double saldo;
     protected double limite;
     protected List<Transacao> transacoes;
@@ -14,6 +16,7 @@ public abstract class Conta {
         this.usuario = usuario;
         this.saldo = 0.0;
         this.transacoes = new ArrayList<>();
+        this.setNumConta();
     }
 
     public void imprimirExtrato(){
@@ -54,7 +57,22 @@ public abstract class Conta {
         return usuario;
     }
 
-    public List<Transacao> getTransacoes() {
-        return transacoes;
+    public int getNumConta() {
+        return numConta;
+    }
+
+    private void setNumConta() {
+        numConta = ++proximoNumConta;
+        this.numConta = numConta;
+    }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "numConta=" + numConta +
+                ", " + usuario.toString() +
+                ", saldo=" + saldo +
+                ", limite=" + limite +
+                '}';
     }
 }

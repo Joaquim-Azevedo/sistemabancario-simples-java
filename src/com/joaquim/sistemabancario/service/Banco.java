@@ -35,16 +35,28 @@ public class Banco {
         return novaConta;
     }
 
+    public void procurarPorNumConta(int conta){
+        for (Conta c : this.getContas()){
+            if(c.getNumConta() == conta){
+                System.out.println(c.toString());
+                break;
+            } else if (c.getNumConta() != conta){} else {
+                System.out.println("Conta não encontrada ou não existente.");
+            }
+        }
+    }
+
     public void listarContas(){
         for (Conta c : this.getContas()) {
             System.out.println("----- Conta -----");
+            System.out.println("Número da conta: " + c.getNumConta());
             System.out.println("Tipo de conta: " + c.getTipoConta());
             System.out.println("Titular: " + c.getUsuario().getNome());
             System.out.println("Saldo: R$" + c.getSaldo());
         }
     }
 
-    private List<Conta> getContas() {
+    public List<Conta> getContas() {
         return contas;
     }
 
