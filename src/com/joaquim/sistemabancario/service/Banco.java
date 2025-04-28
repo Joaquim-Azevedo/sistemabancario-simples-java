@@ -27,7 +27,7 @@ public class Banco {
 
         if(novaConta != null){
             contas.add(novaConta);
-            System.out.println("Conta criada com sucesso.");
+            System.out.println("Conta criada com sucesso. Número da conta: " + novaConta.getNumConta());
         } else {
             System.out.println("Tipo de conta inválida.");
         }
