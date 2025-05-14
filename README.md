@@ -76,21 +76,10 @@ Este é um projeto simples de sistema bancário, desenvolvido em **Java 24**. El
 
 - **Persiste apenas em memória** — Ao encerrar o programa perde-se todas as contas e transações.
 - **Sem interface gráfica** ou menus — Interação somente via código, precisa adaptar para uso “real”.
-- **Baixa cobertura de testes automatizados** — Há um teste no formato de main apenas com execuções básicas.
 - **Validações e exceções básicas** — Sem tratamento robusto de exceções e pouco feedback para erros de negócio.
-- **Registros e relatórios são impressos diretamente na saída padrão** (console).
 
 ---
 
-## 🌱 Possíveis implementações futuras
-
-- Persistência com banco de dados ou arquivos locais (não implementado)
-- Cadastro de múltiplos tipos de usuário e autenticação
-- Relatórios avançados, filtros para extrato e transações
-- API para integração externa
-
----
-
-Este projeto é **apenas** para estudos e serve como base inicial para sistemas bancários mais completos.
-O desenvolvi com o intuito de aprender sendo bem grosseiro no código.
+Desenvolvi este projeto **apenas** para estudos e serve como base inicial para sistemas bancários mais completos.
+O desenvolvi com o intuito de aprender sendo bem grosseiro no código (procurando por funcionalidade).
 Contribuições são bem-vindas para aprimorar a estrutura e funcionalidades! 🚀
