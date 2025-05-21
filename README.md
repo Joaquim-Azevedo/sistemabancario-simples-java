@@ -4,7 +4,7 @@ Este é um projeto simples de sistema bancário, desenvolvido em **Java 24**. El
 
 ---
 
-## ⚡ Funcionalidades
+## Funcionalidades
 
 - Cadastro de **Usuários** do banco
 - Criação de **contas correntes** e **contas poupança**
@@ -16,7 +16,7 @@ Este é um projeto simples de sistema bancário, desenvolvido em **Java 24**. El
 
 ---
 
-## 🗂️ Estrutura do Projeto
+## Estrutura do Projeto
 
 - `Usuario` — representa o cliente do banco.
 - `Conta` — classe abstrata para contas bancárias, implementando operações comuns.
@@ -60,7 +60,7 @@ Este é um projeto simples de sistema bancário, desenvolvido em **Java 24**. El
 
 ---
 
-## 💻 Exemplo Simplificado de Uso
+## Exemplo Simplificado de Uso
 
 ---
 
@@ -72,7 +72,7 @@ Este é um projeto simples de sistema bancário, desenvolvido em **Java 24**. El
 
 ---
 
-## 💡 Observações críticas e limitações
+## Observações críticas e/ou limitações
 
 - **Persiste apenas em memória** — Ao encerrar o programa perde-se todas as contas e transações.
 - **Sem interface gráfica** ou menus — Interação somente via código, precisa adaptar para uso “real”.
